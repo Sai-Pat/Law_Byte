@@ -1,1 +1,113 @@
+//html code for Voice Output and Input
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagrik aur Samvidhan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .box-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .box {
+            width: 6cm;
+            height: 6cm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #000;
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+        }
+        .box::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nagrik aur Samvidhan</h1>
+    <p>This is a solution that empowers every citizen, including teens, to understand their rights and take informed and impactful decisions for themselves and their country.</p>
+    
+    <div class="box-container">
+        <div class="box" data-label="Deaf">Deaf</div>
+        <div class="box" data-label="Common">Common</div>
+        <div class="box" data-label="Blind">Blind</div>
+    </div>
+
+    <script>
+        // Function to speak a message
+        function speakMessage(message, lang, delay = 0) {
+            setTimeout(() => {
+                const utterThis = new SpeechSynthesisUtterance(message);
+                utterThis.lang = lang;
+                window.speechSynthesis.speak(utterThis);
+            }, delay);
+        }
+
+        // Function to start speech recognition
+        function startRecognition() {
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.toLowerCase();
+                
+                // Check if the user said yes in any language
+                if (transcript.includes("yes") || transcript.includes("हाँ") || transcript.includes("हो")) {
+                    speakMessage("Redirecting to the blind-friendly page.", 'en-US');
+                    window.location.href = "blind-friendly-page.html";
+                } else if (transcript.includes("no") || transcript.includes("नहीं") || transcript.includes("नाही")) {
+                    speakMessage("Thank you for your response.", 'en-US');
+                } else {
+                    speakMessage("Sorry, I didn't understand that. Please try again.", 'en-US');
+                    setTimeout(() => recognition.start(), 2000); // Restart the recognition after a delay
+                }
+            };
+
+            recognition.onerror = function(event) {
+                speakMessage("Sorry, there was an error. Please refresh the page and try again.", 'en-US');
+            };
+
+            recognition.start();
+        }
+
+        // Function to ask the user if they are blind in three languages
+        function askIfBlind() {
+            // English
+             speakMessage("Hello, are you blind? Please say yes or no.", 'en-US', 0);
+            // Hindi
+            speakMessage("नमस्ते, क्या आप अंधे हैं? कृपया हाँ या नहीं कहें।", 'hi-IN', 40);
+            // Marathi
+            speakMessage("नमस्कार, आपण आंधळे आहात का? कृपया हो किंवा नाही सांगा.", 'mr-IN', 80);
+
+            // Start recognition after speaking all languages
+            setTimeout(() => startRecognition(), 12000);
+        }
+
+        // Start the process by asking the user if they are blind
+        askIfBlind();
+    </script>
+</body>
+</html>
 
