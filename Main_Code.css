@@ -1,1 +1,90 @@
+body {
+    background-color: black;    
+}
+h1 {
+    font-family: 'Bahnschrift SemiBold'; /* Change the font family */
+    font-size: 62px;                  /* Change the font size */
+    font-weight: bold;                /* Change the font weight */
+    color: rgb(103, 205, 239);   
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 0px; 
+                      /* Change the font color */
+}
+.kunal{
+    font-style: italic; /* Change the font family */
+    font-size: 25px;                  /* Change the font size */
+    font-weight: bold;                /* Change the font weight */
+    color:silver; 
+    margin: 0;
+    padding-top: 0px;
+                        /* Change the font color */
 
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-around; 
+    height:200px;
+    width:200px;
+}
+
+.box {
+    flex: 1;
+    margin:100px; 
+    padding:100px 100px 0px 100px;
+    text-align:top;
+}
+
+.box1 {
+    background-color:rgba(171, 127, 13, 0.925); 
+    height:100px;
+    width:100px;
+    float:left;
+    margin:120px;
+    border:3px solid black;
+    border-radius: 25px;
+    text-align: top;
+    font-size: 20px;
+    
+}
+
+.box2 {
+    background-color:rgba(171, 127, 13, 0.925);
+    height:100px;
+    width:100px;
+    float:left;
+    margin:120px;
+    border:3px solid black;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 20px;
+  
+
+}
+.box3 {
+    background-color:rgba(171, 127, 13, 0.925);
+    height:100px;
+    width:100px;
+    float:left;
+    margin:120px ;
+    border:3px solid black;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 20px;
+     
+}
+.button{
+    padding:50px 50px 50px 50px; 
+    margin:50px;
+    
+}
+marquee{
+    background-color: black;
+    font-size: 20px;
+    color:white;
+    padding:5px;
+    margin:3px;
+
+}
