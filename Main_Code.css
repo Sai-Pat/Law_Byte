@@ -2,23 +2,23 @@ body {
     background-color: black;    
 }
 h1 {
-    font-family: 'Bahnschrift SemiBold'; /* Change the font family */
-    font-size: 62px;                  /* Change the font size */
-    font-weight: bold;                /* Change the font weight */
+    font-family: 'Bahnschrift SemiBold';
+    font-size: 62px;                
+    font-weight: bold;                
     color: rgb(103, 205, 239);   
     margin: 0;
     padding-top: 50px;
     padding-bottom: 0px; 
-                      /* Change the font color */
+                      
 }
 .kunal{
-    font-style: italic; /* Change the font family */
-    font-size: 25px;                  /* Change the font size */
-    font-weight: bold;                /* Change the font weight */
+    font-style: italic; 
+    font-size: 25px;                  
+    font-weight: bold;               
     color:silver; 
     margin: 0;
     padding-top: 0px;
-                        /* Change the font color */
+                        
 
 
 }
