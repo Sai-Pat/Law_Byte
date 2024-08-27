@@ -1,29 +1,94 @@
-function askLanguagePreference() {
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.lang = 'en-IN'; // Default to English for language selection
+
+<!DOCTYPE html>
+<html>
+    <HEAD>
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+    
+    </HEAD>
+    <BODY>
+    
+     
+       <h1><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="pngwing.com.png" height="130px" width="120px">&nbsp;&nbsp;&nbsp;&nbsp; Nagrik Aur Samvidhan &nbsp;&nbsp;&nbsp; <img src="people-together.png" height="130px" width="120px"><img src="left-and-right-arrows.png" height="50px" width="70px"><img src="legislation.png" height="130px" width="130px"></h1>
+    
+       <div class="kunal"
+       <p><center>"This solution empowers every citizen, including teens, to understand their rights and <br> to make informed and impactful decisions for themselves and their country."</center></p>
+         </div>
+       <hr>
+
+       <marquee>
+            Only one feature out of all is Completely Made(Prototype). all the other Features are under Maintainance :)
+       </marquee>
+       
+       
+
+        <div class="container">
+            <div class="box box1"><b><big>Blind People</big></b></div>
+           
+           
+            <div class="box box2"><b><big>Deaf People</big></b></div>
+          
+
+            <div class="box box3"><b><big>Common People</big></b></div>
+            <br>
+            
+    <script>
+        function speakMessage(message, lang, delay = 0) {
+            setTimeout(() => {
+                const utterThis = new SpeechSynthesisUtterance(message);
+                utterThis.lang = lang;
+                window.speechSynthesis.speak(utterThis);
+            }, delay);
+        }
+
+
+        function startRecognition() {
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'hi-IN';
             recognition.continuous = false;
             recognition.interimResults = false;
 
-            speakMessage("What language would you like to continue in? Please say English, Hindi, or Marathi.", 'en-US');
-            speakMessage("आप किस भाषा में आगे बढ़ना चाहेंगे? कृपया अंग्रेजी, हिंदी, या मराठी कहें।", 'hi-IN');
-            speakMessage("तुम्हाला कोणती भाषा वापरायची आहे? कृपया इंग्रजी, हिंदी किंवा मराठी म्हणा.", 'mr-IN');
-
             recognition.onresult = function(event) {
                 const transcript = event.results[0][0].transcript.toLowerCase();
-                document.getElementById('instructions').textContent = `You said: ${transcript}`;
-
-                let lang, message;
-                if (transcript.includes("english")) {
-                    lang = "en-US";
-                    message = "Hello, are you blind? Please say yes or no.";
-                } else if (transcript.includes("hindi") || transcript.includes("हिंदी")) {
-                    lang = "hi-IN";
-                    message = "नमस्ते, क्या आप अंधे हैं? कृपया हाँ या नहीं कहें।";
-                } else if (transcript.includes("marathi") || transcript.includes("मराठी")) {
-                    lang = "mr-IN";
-                    message = "नमस्कार, आपण आंधळे आहात का? कृपया हो किंवा नाही सांगा.";
+    
+                if (transcript.includes("yes") || transcript.includes("हाँ") || transcript.includes("हो")) {
+                    speakMessage("आपकी प्रतिक्रिया के लिए धन्यवाद,आप आगे बढ़ सकते हैं ", 'hi-IN');
+                } else if (transcript.includes("no") || transcript.includes("नहीं") ||transcript.includes("ना")||transcript.includes("नही")|| transcript.includes("नाही")) {
+                    speakMessage("Redirecting to the blind-friendly page.", 'en-US');
+                    window.location.href = "blind-friendly-page.html";
                 } else {
-                    speakMessage("Sorry, I didn't understand that. Please say English, Hindi, or Marathi.", 'en-US');
-                    recognition.start(); // Restart the recognition if the language is not recognized
-                    return;
+                    speakMessage("Sorry, there was an error. Please refresh the page and try again.", 'en-IN');
+                    speakMessage("माफ करा ऐकू शकलो नाही कृपया रिफ्रेश करा आणि पुन्हा बोला", 'mr-IN');
+                    speakMessage("माफ़ कीजिये, मै  समज नहीं पाया ,कृपया रिफ्रेश करके दोबारा कोशिश कीजिये  ", 'hi-IN');
+            
+                    setTimeout(() => recognition.start(2500), ); // Restart the recognition after a delay
                 }
+            };
+
+            recognition.onerror = function(event) {
+                speakMessage("Sorry, there was an error. Please refresh the page and try again.", 'en-IN');
+                speakMessage("माफ करा ऐकू शकलो नाही कृपया रिफ्रेश करा आणि पुन्हा बोला", 'mr-IN');
+                speakMessage("माफ़ कीजिये, मै  समज नहीं पाया ,कृपया रिफ्रेश करके दोबारा कोशिश कीजिये  ", 'hi-IN');
+            
+            };
+
+            recognition.start();
+        }
+
+        
+        function askIfBlind() {
+            //speakMessage("नमस्कार , नागरिक और संविधान एक जरिया है ,जिससे हम लोगो तक संविधान की समझ आसानी से पोहचा रहे है ", 'hi-IN', 0);
+            speakMessage("Hello, are you blind ? Please say yes or no.", 'en-IN', 0);
+            // Hindi
+            speakMessage("नमस्ते, क्या आप देख सकते हैं?कृपया हाँ या नहीं कहें।", 'hi-IN', 3000);
+            // Marathi
+            speakMessage("नमस्कार, आ पण पाहू शकता का?कृपया हो किंवा नाही सांगा.", 'mr-IN', 7000);
+            setTimeout(() => startRecognition(), 15000);
+
+        }
+
+        askIfBlind();
+    </script>
+        
+    </BODY>
+</html>
