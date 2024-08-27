@@ -1,92 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <HEAD>
-        <title></title>
-        <link rel="stylesheet" href="new.css">
-    
-    </HEAD>
-    <BODY>
-    
-     
-       <h1><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="pngwing.com.png" height="130px" width="120px">&nbsp; Nagrik Aur Samvidhan  <img src="people-together.png" height="130px" width="120px"><img src="left-and-right-arrows.png" height="50px" width="70px"><img src="legislation.png" height="130px" width="130px"></h1>
-    
-       <div class="kunal"
-       <p><center>"This solution empowers every citizen, including teens, to understand their rights and <br> to make informed and impactful decisions for themselves and their country."</center></p>
-         </div>
-       <hr>
-
-       <marquee>
-            Only one feature out of all is Completely Made(Prototype). all the other Features are under Maintainance :)
-       </marquee>
-       
-       
-
-        <div class="container">
-            <div class="box box1"><b><big>Blind People</big></b></div>
-           
-           
-            <div class="box box2"><b><big>Deaf People</big></b></div>
-          
-
-            <div class="box box3"><b><big>Common People</big></b></div>
-            <br>
-            
-    <script>
-        // Function to speak a message
-        function speakMessage(message, lang, delay = 0) {
-            setTimeout(() => {
-                const utterThis = new SpeechSynthesisUtterance(message);
-                utterThis.lang = lang;
-                window.speechSynthesis.speak(utterThis);
-            }, delay);
-        }
-
-        // Function to start speech recognition
-        function startRecognition() {
-            const recognition = new webkitSpeechRecognition();
-            recognition.lang = 'en-US';
+function askLanguagePreference() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-IN'; // Default to English for language selection
             recognition.continuous = false;
             recognition.interimResults = false;
 
+            speakMessage("What language would you like to continue in? Please say English, Hindi, or Marathi.", 'en-US');
+            speakMessage("आप किस भाषा में आगे बढ़ना चाहेंगे? कृपया अंग्रेजी, हिंदी, या मराठी कहें।", 'hi-IN');
+            speakMessage("तुम्हाला कोणती भाषा वापरायची आहे? कृपया इंग्रजी, हिंदी किंवा मराठी म्हणा.", 'mr-IN');
+
             recognition.onresult = function(event) {
                 const transcript = event.results[0][0].transcript.toLowerCase();
-                
-                // Check if the user said yes in any language
-                if (transcript.includes("yes") || transcript.includes("हाँ") || transcript.includes("हो")) {
-                    speakMessage("Redirecting to the blind-friendly page.", 'en-US');
-                    window.location.href = "blind-friendly-page.html";
-                } else if (transcript.includes("no") || transcript.includes("नहीं") || transcript.includes("नाही")) {
-                    speakMessage("Thank you for your response.", 'en-US');
+                document.getElementById('instructions').textContent = `You said: ${transcript}`;
+
+                let lang, message;
+                if (transcript.includes("english")) {
+                    lang = "en-US";
+                    message = "Hello, are you blind? Please say yes or no.";
+                } else if (transcript.includes("hindi") || transcript.includes("हिंदी")) {
+                    lang = "hi-IN";
+                    message = "नमस्ते, क्या आप अंधे हैं? कृपया हाँ या नहीं कहें।";
+                } else if (transcript.includes("marathi") || transcript.includes("मराठी")) {
+                    lang = "mr-IN";
+                    message = "नमस्कार, आपण आंधळे आहात का? कृपया हो किंवा नाही सांगा.";
                 } else {
-                    speakMessage("Sorry, I didn't understand that. Please try again.", 'en-US');
-                    setTimeout(() => recognition.start(), 2000); // Restart the recognition after a delay
+                    speakMessage("Sorry, I didn't understand that. Please say English, Hindi, or Marathi.", 'en-US');
+                    recognition.start(); // Restart the recognition if the language is not recognized
+                    return;
                 }
-            };
-
-            recognition.onerror = function(event) {
-                speakMessage("Sorry, there was an error. Please refresh the page and try again.", 'en-US');
-            };
-
-            recognition.start();
-        }
-
-        // Function to ask the user if they are blind in three languages
-        function askIfBlind() {
-            // English
-             speakMessage("Hello, are you blind? Please say yes or no.", 'en-US', 0);
-            // Hindi
-            speakMessage("नमस्ते, क्या आप अंधे हैं? कृपया हाँ या नहीं कहें।", 'hi-IN', 40);
-            // Marathi
-            speakMessage("नमस्कार, आपण आंधळे आहात का? कृपया हो किंवा नाही सांगा.", 'mr-IN', 80);
-
-            // Start recognition after speaking all languages
-            setTimeout(() => startRecognition(), 12000);
-        }
-
-        // Start the process by asking the user if they are blind
-        askIfBlind();
-    </script>
-        
-    </BODY>
-</html>
-
