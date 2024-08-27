@@ -1,40 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nagrik Aur Samvidhan</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Nagrik Aur Samvidhan</h1>
-        <p>A Solution that Empowers Every Citizen, including teens to understand their Rights and take impactful and informed decisions for themselves and their Country</p>
-        <div class="language-selection">
-            <label for="language">Select Language:</label>
-            <select id="language">
-                <option value="en">English</option>
-                <option value="hi">Hindi</option>
-                <option value="mr">Marathi</option>
-            </select>
-        </div>
-    </header>
+function askLanguagePreference() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-IN'; // Default to English for language selection
+            recognition.continuous = false;
+            recognition.interimResults = false;
 
-    <div class="grid-container">
-        <div class="grid-item">Image Recognition</div>
-        <div class="grid-item">Clarity Pool</div>
-        <div class="grid-item">Different Games</div>
-        <div class="grid-item">Mood Waves</div>
-        <div class="grid-item">Meme Generator</div>
-        <div class="grid-item special">Samvidhan Sahayak</div>
-    </div>
+            speakMessage("What language would you like to continue in? Please say English, Hindi, or Marathi.", 'en-US');
+            speakMessage("आप किस भाषा में आगे बढ़ना चाहेंगे? कृपया अंग्रेजी, हिंदी, या मराठी कहें।", 'hi-IN');
+            speakMessage("तुम्हाला कोणती भाषा वापरायची आहे? कृपया इंग्रजी, हिंदी किंवा मराठी म्हणा.", 'mr-IN');
 
-    <footer>
-        <div class="feedback">
-            <label for="feedback">Feedback:</label>
-            <textarea id="feedback" rows="4" placeholder="Your feedback..."></textarea>
-            <button type="submit">Submit</button>
-        </div>
-    </footer>
-</body>
-</html>
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.toLowerCase();
+                document.getElementById('instructions').textContent = `You said: ${transcript}`;
+
+                let lang, message;
+                if (transcript.includes("english")) {
+                    lang = "en-US";
+                    message = "Hello, are you blind? Please say yes or no.";
+                } else if (transcript.includes("hindi") || transcript.includes("हिंदी")) {
+                    lang = "hi-IN";
+                    message = "नमस्ते, क्या आप अंधे हैं? कृपया हाँ या नहीं कहें।";
+                } else if (transcript.includes("marathi") || transcript.includes("मराठी")) {
+                    lang = "mr-IN";
+                    message = "नमस्कार, आपण आंधळे आहात का? कृपया हो किंवा नाही सांगा.";
+                } else {
+                    speakMessage("Sorry, I didn't understand that. Please say English, Hindi, or Marathi.", 'en-US');
+                    recognition.start(); // Restart the recognition if the language is not recognized
+                    return;
+                }
