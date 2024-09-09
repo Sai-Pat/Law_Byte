@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: lightgreen;
+    }
+    </style>
+</head>
+<body>
+    <h3>1. Image Recognition with Constitutional Context</h3>
+    <h3>2. Text to Speech & Hand Gestures</h3>
+    <h3>3. Constitutional Updates According to Social Media Trends</h3>
+    <h3>4. Multilingual Support</h3>
+    <h3>5. Mood Wave</h3>
+    <h3>6. Clarity Pool</h3> 
+    <script>
+        function speakMessage(message, lang, delay = 0) {
+            setTimeout(() => {
+                const utterThis = new SpeechSynthesisUtterance(message);
+                utterThis.lang = lang;
+                window.speechSynthesis.speak(utterThis);
+            }, delay=0);
+        }
+        speakMessage("1.घटनात्मक संदर्भासह प्रतिमा ओळख,2.मजकूर ते भाषण आणि हाताचे जेश्चर,3.सोशल मीडिया ट्रेंडनुसार घटनात्मक अद्यतने,4.बहुभाषिक समर्थन,5.मूड वेव्ह,6.स्पष्टता पूल.", 'mr-IN');
+
+
+       </script>
+    
+</body>
+</html>
