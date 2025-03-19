@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Traceability</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 95%;
+      border-radius: 5px;
+      background: #f1eaeab1;
+      color: rgb(19, 18, 18);
+      display: flex;
+      font-weight: bold;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 50px;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      background-color: rgba(255, 255, 255, 0.046);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      align-items: flex-end;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      color: rgb(29, 27, 27);
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff9800;
+    }
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Main Container */
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 80px; /* Adjust based on navbar height */
+      padding: 20px;
+    }
+
+    /* Image Slider Styles */
+    .image-slider {
+      width: 70%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .image-slider img.active {
+      opacity: 1;
+    }
+/* Box Container Styles */
+.box-container {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0px;
+      gap: 20px;
+    }
+
+    /* Gradient Border for Boxes */
+    .box {
+      position: relative;
+      width: 80%;
+      height: 170px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      /* Gradient Border */
+      border: 4px solid transparent; /* Transparent border */
+      background-clip: padding-box; /* Ensures the background doesn't cover the border */
+      background-image: linear-gradient(white, white), /* Inner background */
+                        linear-gradient(60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%)); /* Gradient border */
+      background-origin: border-box; /* Ensures the gradient covers the border */
+      background-clip: padding-box, border-box; /* Clips the background to the padding and border */
+    }
+
+    .box:hover {
+      transform: translateY(-10px);
+    }
+
+    .box img {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .box button {
+      padding: 10px; 
+      
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      margin-top: 0px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      text-transform: uppercase;
+    }
+
+    .box button:hover {
+      transform: translateY(5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Button Colors */
+    .box:nth-child(1) button {
+      background: linear-gradient(to bottom right, #34eb40, #0f9d0f);
+    }
+
+    .box:nth-child(2) button {
+      background: linear-gradient(to bottom right, #309110, #4dbf0f);
+    }
+
+    .box:nth-child(3) button {
+      background: linear-gradient(to bottom right, #03a9f4, #01579b);
+    }
+
+    .content {
+      margin-top: 80px;
+      padding: 20px;
+    }
+
+    /* Image Slider Styles */
+    .image-slider {
+      width: 70%;
+      height: 660px;
+      margin-top: 20px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .image-slider img.active {
+      opacity: 1;
+    }
+
+    /* Text Overlay Styles */
+    .image-slider .text-overlay {
+      position: absolute;
+      top: 25%;
+      padding: 30px;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 42px;
+      font-weight: bold;
+      text-transform: uppercase;
+      
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .image-slider .text-overlay.active {
+      opacity: 1;
+    }
+    /* About Section Styles */
+    .about {
+      padding: 50px 20px;
+      background-color: #e8f5e9;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #4CAF50;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 18px;
+      color: #353232;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Contributors Section Styles */
+    .contributors {
+      padding: 50px 20px;
+     
+      background-color: #f1f8e9;
+      text-align: center;
+    }
+
+    .contributors h2 {
+      color: #4CAF50;
+      font-size: 33px;
+      margin-bottom: 20px;
+    }
+
+    .contributors .team {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .contributors .member {
+      background-color: white;
+      border-radius: 110px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      padding: 20px;
+      margin: 0px;
+    }
+
+    .contributors .member h3 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    .contributors .member p {
+      font-size: 17px;
+      color: #666;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 45px 0;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-section {
+      width: 25%;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      color: #f4b400;
+      font-size: 20px;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+      color: #dcdcdc;
+      font-size: 15px;
+      padding: 6px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin: 8px 0;
+    }
+
+    .footer-section ul li a {
+      color: #dcdcdc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #f4b400;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      transition: 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="logo of team" height="40px">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="learn">Learn</a></li>
+      <li><a href="https://krishijagran.com/">News</a></li>
+      <li><a href="#contributors">Contributors</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-container">
+    <!-- Image Slider -->
+    <div class="image-slider">
+      <img src="farm.jpg" alt="Farmers" class="active">
+      <div class="text-overlay active">From Farm to Fork: Ensuring Transparency in Every Bite</div>
+
+      <img src="food.jpg" alt="Harvesting">
+      <div class="text-overlay">Track Your Food: Know Where It Comes From</div>
+
+      <img src="cut.jpg" alt="Organic Farming">
+      <div class="text-overlay">Organic and Authentic: Trust in Every Step</div>
+    </div>
+
+    <!-- Boxes -->
+    <div class="box-container">
+      <div class="box">
+        <a href="pesticide_seller.html">
+          <img src="pesd.jpg" alt="Pesticide Seller">
+        </a>
+        <button onclick="playSound(); location.href='pesticide_seller.html'">Pesticide Seller</button>
+      </div>
+      <div class="box">
+        <a href="farmer.html">
+          <img src="farmerlogin.png" alt="Farmer">
+        </a>
+        <button onclick="playSound(); location.href='farmer.html'">Farmer</button>
+      </div>
+      <div class="box">
+        <a href="distributor.html">
+          <img src="diss.jpg" alt="Distributor">
+        </a>
+        <button onclick="playSound(); location.href='distributor.html'">Distributor</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      AgriTech is a revolutionary platform designed to bridge the gap between farmers, sellers, and distributors. 
+      Our mission is to ensure transparency, efficiency, and sustainability in the agricultural supply chain. 
+      With cutting-edge technology and a dedicated team, we aim to empower farmers and promote organic farming practices.
+      Join us in transforming agriculture for a better tomorrow!
+    </p>
+  </div>
+
+  <!-- Contributors Section -->
+  <div class="contributors" id="contributors">
+    <h2>Our Team</h2>
+    <div class="team">
+      <div class="member">
+        <img src="chaitanya.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
+        <h3>Chaitanya Patil</h3>
+        <p>Blockchain and Web3 Expert</p>
+      </div>
+      <div class="member">
+        <img src="kunal.png.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
+        <h3>Kunal Pawar</h3>
+        <p>Web Developer</p>
+      </div>
+      <div class="member">
+        <img src="rajat.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
+        <h3>Rajat Chaudhari</h3>
+        <p>AI & ML Specialist</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>🌱 Food Traceability System</h3>
+        <p>Ensuring transparency and authenticity in organic food.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:patilchaitanya604@gmail.com">patilchaitanya604@gmail.com</a></p>
+        <p>Phone: 9173749573</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><img src="facebook.png" alt="Facebook"></a>
+          <a href="https://github.com/sai-pat"><img src="github.png" alt="GitHub"></a>
+          <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Food Traceability System | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <audio id="tikSound">
+    <source src="tik-sound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    
+// Function to play the "tik" sound
+function playSound() {
+      const audio = document.getElementById('tikSound');
+      audio.play();
+    }
+
+    // Image Slider Functionality
+    const images = document.querySelectorAll('.image-slider img');
+    const textOverlays = document.querySelectorAll('.image-slider .text-overlay');
+    let currentImage = 0;
+
+    setInterval(() => {
+      // Hide current image and text
+      images[currentImage].classList.remove('active');
+      textOverlays[currentImage].classList.remove('active');
+
+      // Move to the next image
+      currentImage = (currentImage + 1) % images.length;
+
+      // Show next image and text
+      images[currentImage].classList.add('active');
+      textOverlays[currentImage].classList.add('active');
+    }, 3000);
+  </script>
