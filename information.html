@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information about Various Pesticides Used for Farming Crops in India</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e0f7fa, #b9fbc0);
+            color: #333;
+            position: relative;
+            overflow-x: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #1a3c34;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        table {
+            width: 90%; /* Limits width, leaving ~2cm on each side */
+            max-width: 1200px; /* Caps the table width */
+            margin: 20px auto; /* Centers the table */
+            border-collapse: collapse;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        th {
+            background: #2e7d32;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        td {
+            background: #fafafa;
+        }
+        tr:hover td {
+            background: #c8e6c9;
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+        tr {
+            transition: transform 0.3s ease;
+        }
+        .natural {
+            color: #388e3c;
+            font-weight: 500;
+        }
+        .chemical {
+            color: #d32f2f;
+            font-weight: 500;
+        }
+        .references, .team {
+            margin: 30px auto;
+            font-size: 1em;
+            text-align: center;
+            animation: slideUp 2s ease-in-out;
+            max-width: 1200px;
+        }
+        .references a {
+            color: #0288d1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .references a:hover {
+            color: #01579b;
+            text-decoration: underline;
+        }
+        .team {
+            font-weight: bold;
+            color: #1a3c34;
+            font-size: 1.2em;
+        }
+
+        /* Leaf Shower Animation */
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('leaf.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* Multiple leaves with different speeds and delays */
+        .leaf:nth-child(1) { left: 10%; animation-duration: 5s; animation-delay: 0s; }
+        .leaf:nth-child(2) { left: 20%; animation-duration: 6s; animation-delay: 1s; }
+        .leaf:nth-child(3) { left: 30%; animation-duration: 4s; animation-delay: 2s; }
+        .leaf:nth-child(4) { left: 40%; animation-duration: 7s; animation-delay: 0.5s; }
+        .leaf:nth-child(5) { left: 50%; animation-duration: 5.5s; animation-delay: 1.5s; }
+        .leaf:nth-child(6) { left: 60%; animation-duration: 6.5s; animation-delay: 2.5s; }
+        .leaf:nth-child(7) { left: 70%; animation-duration: 4.5s; animation-delay: 0.8s; }
+        .leaf:nth-child(8) { left: 80%; animation-duration: 5.8s; animation-delay: 1.2s; }
+        .leaf:nth-child(9) { left: 90%; animation-duration: 6s; animation-delay: 2.8s; }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            th, td { padding: 10px; font-size: 0.9em; }
+            table { width: 95%; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+
+    <h1>Information   about   Various   Pesticides   Used   for   Farming   Crops   in   India</h1>
+    <table>
+        <tr>
+            <th>Crop Name</th>
+            <th>Natural Pesticides (3)</th>
+            <th>Chemical Pesticides (2)</th>
+        </tr>
+        <tr><td>Apple</td><td class="natural">Neem Oil, Diatomaceous Earth, Pyrethrins</td><td class="chemical">Captan, Mancozeb</td></tr>
+        <tr><td>Rice</td><td class="natural">Garlic Oil Spray, Neem Oil, Spinosad</td><td class="chemical">Chlorpyrifos, Imidacloprid</td></tr>
+        <tr><td>Wheat</td><td class="natural">Karanja Oil, Garlic Oil Spray, Neem Oil</td><td class="chemical">Mancozeb, Tebuconazole</td></tr>
+        <tr><td>Sugarcane</td><td class="natural">Neem Oil, Spinosad, Karanja Oil</td><td class="chemical">Carbofuran, Malathion</td></tr>
+        <tr><td>Banana</td><td class="natural">Garlic Oil Spray, Neem Oil, Pyrethrins</td><td class="chemical">Copper Fungicide, Chlorothalonil</td></tr>
+        <tr><td>Maize</td><td class="natural">Neem Oil, Diatomaceous Earth, Spinosad</td><td class="chemical">Cypermethrin, Carbaryl</td></tr>
+        <tr><td>Cotton</td><td class="natural">Pyrethrins, Neem Oil, Karanja Oil</td><td class="chemical">Imidacloprid, Endosulfan</td></tr>
+        <tr><td>Potato</td><td class="natural">Garlic Oil Spray, Neem Oil, Spinosad</td><td class="chemical">Mancozeb, Chlorpyrifos</td></tr>
+        <tr><td>Soybean</td><td class="natural">Neem Oil, Karanja Oil, Pyrethrins</td><td class="chemical">Dimethoate, Thiamethoxam</td></tr>
+        <tr><td>Tomato</td><td class="natural">Spinosad, Garlic Oil Spray, Neem Oil</td><td class="chemical">Copper Fungicide, Carbaryl</td></tr>
+        <tr><td>Mango</td><td class="natural">Neem Oil, Pyrethrins, Beauveria bassiana</td><td class="chemical">Malathion, Captan</td></tr>
+        <tr><td>Pulses</td><td class="natural">Garlic Oil Spray, Spinosad, Karanja Oil</td><td class="chemical">Monocrotophos, Quinalphos</td></tr>
+        <tr><td>Millet</td><td class="natural">Neem Oil, Diatomaceous Earth, Pyrethrins</td><td class="chemical">Cypermethrin, Mancozeb</td></tr>
+        <tr><td>Groundnut</td><td class="natural">Karanja Oil, Neem Oil, Spinosad</td><td class="chemical">Chlorpyrifos, Carbendazim</td></tr>
+        <tr><td>Mustard</td><td class="natural">Garlic Oil Spray, Pyrethrins, Neem Oil</td><td class="chemical">Imidacloprid, Tebuconazole</td></tr>
+        <tr><td>Jute</td><td class="natural">Neem Oil, Spinosad, Karanja Oil</td><td class="chemical">Malathion, Copper Fungicide</td></tr>
+        <tr><td>Tea</td><td class="natural">Pyrethrins, Neem Oil, Beauveria bassiana</td><td class="chemical">Endosulfan, Hexaconazole</td></tr>
+        <tr><td>Coffee</td><td class="natural">Garlic Oil Spray, Spinosad, Neem Oil</td><td class="chemical">Chlorothalonil, Cypermethrin</td></tr>
+        <tr><td>Rubber</td><td class="natural">Neem Oil, Karanja Oil, Pyrethrins</td><td class="chemical">Mancozeb, Carbaryl</td></tr>
+        <tr><td>Coconut</td><td class="natural">Spinosad, Neem Oil, Diatomaceous Earth</td><td class="chemical">Imidacloprid, Malathion</td></tr>
+        <tr><td>Chickpea</td><td class="natural">Garlic Oil Spray, Pyrethrins, Neem Oil</td><td class="chemical">Quinalphos, Chlorpyrifos</td></tr>
+        <tr><td>Sorghum</td><td class="natural">Neem Oil, Spinosad, Karanja Oil</td><td class="chemical">Cypermethrin, Mancozeb</td></tr>
+        <tr><td>Sunflower</td><td class="natural">Pyrethrins, Neem Oil, Diatomaceous Earth</td><td class="chemical">Imidacloprid, Tebuconazole</td></tr>
+        <tr><td>Sesame</td><td class="natural">Garlic Oil Spray, Spinosad, Neem Oil</td><td class="chemical">Carbaryl, Chlorothalonil</td></tr>
+        <tr><td>Barley</td><td class="natural">Neem Oil, Karanja Oil, Pyrethrins</td><td class="chemical">Mancozeb, Propiconazole</td></tr>
+        <tr><td>Onion</td><td class="natural">Spinosad, Neem Oil, Garlic Oil Spray</td><td class="chemical">Chlorpyrifos, Copper Fungicide</td></tr>
+        <tr><td>Garlic</td><td class="natural">Pyrethrins, Neem Oil, Diatomaceous Earth</td><td class="chemical">Malathion, Captan</td></tr>
+        <tr><td>Chilli</td><td class="natural">Neem Oil, Spinosad, Karanja Oil</td><td class="chemical">Imidacloprid, Cypermethrin</td></tr>
+        <tr><td>Turmeric</td><td class="natural">Garlic Oil Spray, Pyrethrins, Neem Oil</td><td class="chemical">Mancozeb, Carbendazim</td></tr>
+        <tr><td>Ginger</td><td class="natural">Neem Oil, Spinosad, Diatomaceous Earth</td><td class="chemical">Chlorothalonil, Quinalphos</td></tr>
+        <tr><td>Cardamom</td><td class="natural">Pyrethrins, Neem Oil, Karanja Oil</td><td class="chemical">Copper Fungicide, Malathion</td></tr>
+        <tr><td>Black Pepper</td><td class="natural">Spinosad, Garlic Oil Spray, Neem Oil</td><td class="chemical">Carbaryl, Hexaconazole</td></tr>
+        <tr><td>Cashew</td><td class="natural">Neem Oil, Pyrethrins, Diatomaceous Earth</td><td class="chemical">Imidacloprid, Mancozeb</td></tr>
+        <tr><td>Pomegranate</td><td class="natural">Garlic Oil Spray, Spinosad, Neem Oil</td><td class="chemical">Chlorpyrifos, Tebuconazole</td></tr>
+        <tr><td>Grapes</td><td class="natural">Neem Oil, Karanja Oil, Pyrethrins</td><td class="chemical">Captan, Cypermethrin</td></tr>
+        <tr><td>Orange</td><td class="natural">Spinosad, Neem Oil, Diatomaceous Earth</td><td class="chemical">Malathion, Copper Fungicide</td></tr>
+        <tr><td>Guava</td><td class="natural">Garlic Oil Spray, Pyrethrins, Neem Oil</td><td class="chemical">Carbaryl, Chlorothalonil</td></tr>
+        <tr><td>Papaya</td><td class="natural">Neem Oil, Spinosad, Karanja Oil</td><td class="chemical">Imidacloprid, Mancozeb</td></tr>
+        <tr><td>Watermelon</td><td class="natural">Pyrethrins, Neem Oil, Diatomaceous Earth</td><td class="chemical">Chlorpyrifos, Tebuconazole</td></tr>
+        <tr><td>Cucumber</td><td class="natural">Spinosad, Garlic Oil Spray, Neem Oil</td><td class="chemical">Copper Fungicide, Cypermethrin</td></tr>
+        <tr><td>Brinjal</td><td class="natural">Neem Oil, Pyrethrins, Karanja Oil</td><td class="chemical">Carbaryl, Malathion</td></tr>
+        <tr><td>Okra</td><td class="natural">Garlic Oil Spray, Spinosad, Neem Oil</td><td class="chemical">Imidacloprid, Chlorothalonil</td></tr>
+        <tr><td>Cauliflower</td><td class="natural">Neem Oil, Diatomaceous Earth, Pyrethrins</td><td class="chemical">Mancozeb, Quinalphos</td></tr>
+        <tr><td>Cabbage</td><td class="natural">Spinosad, Neem Oil, Karanja Oil</td><td class="chemical">Chlorpyrifos, Copper Fungicide</td></tr>
+        <tr><td>Peas</td><td class="natural">Garlic Oil Spray, Pyrethrins, Neem Oil</td><td class="chemical">Carbaryl, Tebuconazole</td></tr>
+        <tr><td>Lentil</td><td class="natural">Neem Oil, Spinosad, Diatomaceous Earth</td><td class="chemical">Imidacloprid, Mancozeb</td></tr>
+        <tr><td>Ragi</td><td class="natural">Pyrethrins, Neem Oil, Karanja Oil</td><td class="chemical">Cypermethrin, Chlorothalonil</td></tr>
+        <tr><td>Bajra</td><td class="natural">Spinosad, Garlic Oil Spray, Neem Oil</td><td class="chemical">Malathion, Captan</td></tr>
+        <tr><td>Tobacco</td><td class="natural">Neem Oil, Pyrethrins, Diatomaceous Earth</td><td class="chemical">Chlorpyrifos, Imidacloprid</td></tr>
+        <tr><td>Safflower</td><td class="natural">Garlic Oil Spray, Spinosad, Neem Oil</td><td class="chemical">Carbaryl, Mancozeb</td></tr>
+    </table>
+
+    <div class="references">
+        <p><strong>References:</strong> Information compiled from websites such as the Indian Council of Agricultural Research (ICAR) - <a href="https://icar.org.in">icar.org.in</a>, Directorate of Plant Protection, Quarantine & Storage - <a href="http://ppqs.gov.in">ppqs.gov.in</a>, and Food and Agriculture Organization (FAO) - <a href="https://www.fao.org">fao.org</a>.</p>
+    </div>
+    <div class="team">
+        <p>Concluded by our team: <strong>Aarambh</strong></p>
+    </div>
+</body>
+</html>
