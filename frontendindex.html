@@ -10,8 +10,8 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background-image: url(https://cdn.wallpapersafari.com/47/23/JhH160.jpg);
+      
     }
 
     /* Navbar Styling */
@@ -21,7 +21,7 @@
       left: 0;
       width: 95%;
       border-radius: 5px;
-      background: #f1eaeab1;
+      background: #f1eaea7b;
       color: rgb(19, 18, 18);
       display: flex;
       font-weight: bold;
@@ -58,28 +58,23 @@
     .nav-links a:hover {
       color: #ff9800;
     }
-    /* General Styles */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
 
     /* Main Container */
     .main-container {
       display: flex;
+      background-image: url(https://cdn.wallpapersafari.com/47/23/JhH160.jpg);
       justify-content: space-between;
       align-items: flex-start;
       margin-top: 80px; /* Adjust based on navbar height */
       padding: 20px;
     }
+    
 
     /* Image Slider Styles */
     .image-slider {
-      width: 70%;
-      height: 500px;
+      width: 73%;
+      height: 660px;
+      margin-top: 65px;
       overflow: hidden;
       position: relative;
       border-radius: 10px;
@@ -100,21 +95,22 @@
     .image-slider img.active {
       opacity: 1;
     }
-/* Box Container Styles */
-.box-container {
+
+    /* Box Container Styles */
+    .box-container {
       width: 25%;
       display: flex;
       flex-direction: column;
       margin-top: 0px;
-      gap: 20px;
+      gap: 13px;
     }
 
     /* Gradient Border for Boxes */
     .box {
       position: relative;
       width: 80%;
-      height: 170px;
-      margin-top: 30px;
+      height: 185px;
+      margin-top: 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -144,8 +140,7 @@
     }
 
     .box button {
-      padding: 10px; 
-      
+      padding: 10px;
       font-size: 16px;
       font-weight: bold;
       color: white;
@@ -160,8 +155,9 @@
     }
 
     .box button:hover {
-      transform: translateY(5px);
+      transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to bottom right, #ff9800, #f57c00); /* Change color on hover */
     }
 
     /* Button Colors */
@@ -170,42 +166,11 @@
     }
 
     .box:nth-child(2) button {
-      background: linear-gradient(to bottom right, #309110, #4dbf0f);
+      background: linear-gradient(to bottom right, #34eb40, #0f9d0f);
     }
 
     .box:nth-child(3) button {
-      background: linear-gradient(to bottom right, #03a9f4, #01579b);
-    }
-
-    .content {
-      margin-top: 80px;
-      padding: 20px;
-    }
-
-    /* Image Slider Styles */
-    .image-slider {
-      width: 70%;
-      height: 660px;
-      margin-top: 20px;
-      overflow: hidden;
-      position: relative;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .image-slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .image-slider img.active {
-      opacity: 1;
+      background: linear-gradient(to bottom right, #34eb40, #0f9d0f);
     }
 
     /* Text Overlay Styles */
@@ -213,13 +178,14 @@
       position: absolute;
       top: 25%;
       padding: 30px;
+      line-gap-override: 20px;
       left: 40%;
       transform: translate(-50%, -50%);
+      font-family:tektur;
       color: white;
-      font-size: 42px;
+      font-size: 40px;
       font-weight: bold;
       text-transform: uppercase;
-      
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: opacity 1s ease-in-out;
@@ -228,69 +194,120 @@
     .image-slider .text-overlay.active {
       opacity: 1;
     }
+
     /* About Section Styles */
     .about {
       padding: 50px 20px;
-      background-color: #e8f5e9;
+      background-image: url(https://cdn.wallpapersafari.com/47/23/JhH160.jpg);
       text-align: center;
     }
 
     .about h2 {
       color: #4CAF50;
-      font-size: 32px;
-      margin-bottom: 20px;
+      font-size: 36px;
+      margin-bottom: 30px;
     }
 
     .about p {
       font-size: 18px;
-      color: #353232;
+      color: #fdfafa;
       max-width: 800px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
-    /* Contributors Section Styles */
     .contributors {
-      padding: 50px 20px;
-     
-      background-color: #f1f8e9;
-      text-align: center;
-    }
+    text-align: center;
+    
+    padding: 20px;
+    background-image: url(https://cdn.wallpapersafari.com/47/23/JhH160.jpg);
+    position: relative;
+    overflow: hidden;
+}
 
-    .contributors h2 {
-      color: #4CAF50;
-      font-size: 33px;
-      margin-bottom: 20px;
-    }
+.contributors h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #4CAF50;
+}
 
-    .contributors .team {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
+.team {
+    display: flex;
+    flex-direction: row; /* Arrange members horizontally */
+    justify-content: center; /* Center-align members */
+    gap: 40px; /* Space between members */
+    flex-wrap: wrap; /* Wrap members if they overflow */
+}
 
-    .contributors .member {
-      background-color: white;
-      border-radius: 110px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      padding: 20px;
-      margin: 0px;
-    }
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 250px;
+    opacity: 0; /* Start invisible */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
 
-    .contributors .member h3 {
-      color: #4CAF50;
-      margin-bottom: 20px;
-    }
+.member.left {
+    transform: translateX(-100%); /* Start off-screen for left animation */
+}
 
-    .contributors .member p {
-      font-size: 17px;
-      color: #666;
-    }
+.member.right {
+    transform: translateX(100%); /* Start off-screen for right animation */
+}
 
+.member.animate {
+    opacity: 1;
+    transform: translateX(0); /* Move to the center */
+}
+
+.member img {
+    width: 120px;
+    height: 130px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    border: 2px solid;
+    z-index: 2; /* Ensure the image is above the gradient border */
+}
+
+/* Gradient Border Effect */
+.member img::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Adjust based on border thickness */
+    left: -5px; /* Adjust based on border thickness */
+    right: -5px; /* Adjust based on border thickness */
+    bottom: -5px; /* Adjust based on border thickness */
+    background: linear-gradient(45deg, #00ffcc, #ff00cc, #00ffcc);
+    border-radius: 15px; /* Slightly larger than the image border-radius */
+    z-index: 3; /* Place the gradient behind the image */
+    animation: rotateGradient 3s linear infinite;
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.member h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+.member p {
+    font-size: 16px;
+    color: #ccc;
+}
     /* Footer Styles */
     footer {
-      background-color: #2c3e50;
+      background-color: #72767a7e;
       color: white;
       padding: 45px 0;
       text-align: center;
@@ -317,8 +334,8 @@
     .footer-section p,
     .footer-section ul {
       color: #dcdcdc;
-      font-size: 15px;
-      padding: 6px;
+      font-size: 16px;
+      padding: 4px;
     }
 
     .footer-section ul {
@@ -359,9 +376,172 @@
     .footer-bottom {
       margin-top: 40px;
       border-top: 1px solid #444;
+      font-weight: bold;
       padding-top: 20px;
-      font-size: 14px;
+      font-size: 24px;
     }
+    .image{
+      margin-left: 260px;
+      border-radius: 10px;
+      
+    }
+    .section {
+      display: none;
+    }
+
+    /* Show the active section */
+    .section.active {
+      display: block;
+      
+    }
+
+    body {background: #222;}
+
+/* leaf animations */
+
+#leaves {
+    position: relative;
+    top: -50px;
+    width: 100%;
+    text-align: right;
+    z-index: 10; /* Ensure the leaves container is above other elements */
+}
+
+#leaves i {
+    display: inline-block;
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(to bottom right, #309900, #005600);
+    transform: skew(20deg);
+    border-radius: 5% 40% 70%;
+    box-shadow: inset 0px 0px 1px #222;
+    border: 1px solid #333;
+    z-index: 10; /* Ensure the leaves are above other elements */
+    -webkit-animation: falling 5s 0s infinite;
+    opacity: 0.7; /* Initial opacity */
+}
+
+#leaves i:nth-of-type(2n) { -webkit-animation: falling2 5s 0s infinite; }
+#leaves i:nth-of-type(3n) { -webkit-animation: falling3 5s 0s infinite; }
+
+#leaves i:before {
+    position: absolute;
+    content: '';
+    top: 117px;
+    right: 9px;
+    height: 27px;
+    width: 32px;
+    transform: rotate(49deg);
+    border-radius: 0% 15% 15% 0%;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-left: 0px solid #222;
+    border-right: 1px solid #222;
+    background: linear-gradient(to right, rgba(0,100,0,1), #005600);
+    z-index: 1;
+}
+
+#leaves i:after {
+    content: '';
+    height: 125px;
+    width: 10px;
+    background: linear-gradient(to right, rgba(0,0,0,.15), rgba(0,0,0,0));
+    display: block;
+    transform: rotate(125deg);
+    position: absolute;
+    left: 85px;
+    border-radius: 50%;
+}
+
+#leaves i:nth-of-type(n)    { height:23px; width:30px; }
+#leaves i:nth-of-type(n):before { width:7px; height:5px; top:17px; right:1px; }
+#leaves i:nth-of-type(n):after { width:2px; height:17px; left: 12px; top:0px; }
+
+#leaves i:nth-of-type(2n+1)    { height:11px; width:16px; }
+#leaves i:nth-of-type(2n+1):before { width:4px; height:3px; top:7px; right:0px; }
+#leaves i:nth-of-type(2n+1):after { width:2px; height:6px; left: 5px; top:1px; }
+
+#leaves i:nth-of-type(3n+2)  { height:17px; width:23px; }
+#leaves i:nth-of-type(3n+2):before  { height:4px; width:4px; top:12px; right:1px; }
+#leaves i:nth-of-type(3n+2):after  { height:10px; width:2px; top:1px; left:8px; }
+
+#leaves i:nth-of-type(n)   { -webkit-animation-delay: 1.9s;}
+#leaves i:nth-of-type(2n)  { -webkit-animation-delay: 3.9s;}
+#leaves i:nth-of-type(3n)  { -webkit-animation-delay: 2.3s;}
+#leaves i:nth-of-type(4n)  { -webkit-animation-delay: 4.4s;}
+#leaves i:nth-of-type(5n)  { -webkit-animation-delay: 5s;  }
+#leaves i:nth-of-type(6n)  { -webkit-animation-delay: 3.5s;}
+#leaves i:nth-of-type(7n)  { -webkit-animation-delay: 2.8s;}
+#leaves i:nth-of-type(8n)  { -webkit-animation-delay: 1.5s;}
+#leaves i:nth-of-type(9n)  { -webkit-animation-delay: 3.3s;}
+#leaves i:nth-of-type(10n) { -webkit-animation-delay: 2.5s;}
+#leaves i:nth-of-type(11n) { -webkit-animation-delay: 1.2s;}
+#leaves i:nth-of-type(12n) { -webkit-animation-delay: 4.1s;}
+#leaves i:nth-of-type(13n) { -webkit-animation-delay: 1s;  }
+#leaves i:nth-of-type(14n) { -webkit-animation-delay: 4.7s;}
+#leaves i:nth-of-type(15n) { -webkit-animation-delay: 3s;  }
+
+#leaves i:nth-of-type(n)    { background: linear-gradient(to bottom right, #309900, #005600); }
+#leaves i:nth-of-type(2n+2)  { background: linear-gradient(to bottom right, #5e9900, #2b5600); }
+#leaves i:nth-of-type(4n+1)  { background: linear-gradient(to bottom right, #990, #564500); }
+
+#leaves i:nth-of-type(n)    { opacity: .7;}
+#leaves i:nth-of-type(3n+1)  { opacity: .5;}
+#leaves i:nth-of-type(3n+2)  { opacity: .3;}
+
+#leaves i:nth-of-type(n)    {transform: rotate(180deg);}
+
+#leaves i:nth-of-type(n) { -webkit-animation-timing-function:ease-in-out;}
+
+@-webkit-keyframes falling {
+    0% {
+        -webkit-transform:
+            translate3d(300px, 0, 0)
+            rotate(0deg);
+        opacity: 0.7;
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-350px, 700px, 0)
+            rotate(90deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling3 {
+    0% {
+        -webkit-transform:
+            translate3d(0, 0, 0)
+            rotate(-20deg);
+        opacity: 0.7;
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-230px, 640px, 0)
+            rotate(-70deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes falling2 {
+    0% {
+        -webkit-transform:
+            translate3d(0, 0, 0)
+            rotate(90deg);
+        opacity: 0.7;
+    }
+    
+    100% {
+        -webkit-transform:
+            translate3d(-400px, 680px, 0)
+            rotate(0deg);
+        opacity: 0;
+    }
+}
+
+
   </style>
 </head>
 <body>
@@ -373,44 +553,71 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="learn">Learn</a></li>
+      <li><a href="information.html">Learn</a></li>
       <li><a href="https://krishijagran.com/">News</a></li>
       <li><a href="#contributors">Contributors</a></li>
     </ul>
   </nav>
 
-  <div class="main-container">
-    <!-- Image Slider -->
-    <div class="image-slider">
-      <img src="farm.jpg" alt="Farmers" class="active">
-      <div class="text-overlay active">From Farm to Fork: Ensuring Transparency in Every Bite</div>
+  <div id="leaves">
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i> 
+  </div>
+  
 
-      <img src="food.jpg" alt="Harvesting">
-      <div class="text-overlay">Track Your Food: Know Where It Comes From</div>
+ 
 
-      <img src="cut.jpg" alt="Organic Farming">
-      <div class="text-overlay">Organic and Authentic: Trust in Every Step</div>
-    </div>
 
-    <!-- Boxes -->
-    <div class="box-container">
-      <div class="box">
-        <a href="pesticide_seller.html">
-          <img src="pesd.jpg" alt="Pesticide Seller">
-        </a>
-        <button onclick="playSound(); location.href='pesticide_seller.html'">Pesticide Seller</button>
+  <!-- N
+
+  <!-- Home Section -->
+  <div class="section active" id="home">
+    <div class="main-container">
+      <!-- Image Slider -->
+      <div class="image-slider">
+        <img src="farm.jpg" alt="Farmers" class="active">
+        <div class="text-overlay active">From Farm to Fork: Ensuring Transparency in Every Bite</div>
+
+        <img src="food.jpg" alt="Harvesting">
+        <div class="text-overlay">Track Your Food: Know Where It Comes From</div>
+
+        <img src="cut.jpg" alt="Organic Farming">
+        <div class="text-overlay">Organic and Authentic: Trust in Every Step</div>
       </div>
-      <div class="box">
-        <a href="farmer.html">
-          <img src="farmerlogin.png" alt="Farmer">
-        </a>
-        <button onclick="playSound(); location.href='farmer.html'">Farmer</button>
-      </div>
-      <div class="box">
-        <a href="distributor.html">
-          <img src="diss.jpg" alt="Distributor">
-        </a>
-        <button onclick="playSound(); location.href='distributor.html'">Distributor</button>
+
+      <!-- Boxes -->
+      <div class="box-container">
+        <div class="box">
+          <a href="pesticide_seller.html">
+            <img src="pesd.jpg" alt="Pesticide Seller">
+          </a>
+          <button onclick="window.location.href='pesticide_seller.html'">Pesticide Seller</button>
+        </div>
+        <div class="box">
+          <a href="farmer.html">
+            <img src="farmerlogin.png" alt="Farmer">
+          </a>
+          <button onclick="window.location.href='farmer.html'">Farmer</button>
+        </div>
+        <div class="box">
+          <a href="distributor.html">
+            <img src="diss.jpg" alt="Distributor">
+          </a>
+          <button onclick="window.location.href='distributor.html'">Distributor</button>
+        </div>
       </div>
     </div>
   </div>
@@ -424,30 +631,33 @@
       With cutting-edge technology and a dedicated team, we aim to empower farmers and promote organic farming practices.
       Join us in transforming agriculture for a better tomorrow!
     </p>
+    <img src="system.png" atl="system_image" style="width:1000px; height: 300px; margin-top: 40px; border-radius: 30px; "  >
   </div>
+  
+    
+ 
 
   <!-- Contributors Section -->
   <div class="contributors" id="contributors">
     <h2>Our Team</h2>
     <div class="team">
-      <div class="member">
-        <img src="chaitanya.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
-        <h3>Chaitanya Patil</h3>
-        <p>Blockchain and Web3 Expert</p>
-      </div>
-      <div class="member">
-        <img src="kunal.png.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
-        <h3>Kunal Pawar</h3>
-        <p>Web Developer</p>
-      </div>
-      <div class="member">
-        <img src="rajat.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
-        <h3>Rajat Chaudhari</h3>
-        <p>AI & ML Specialist</p>
-      </div>
+        <div class="member left">
+            <img src="chaitanya.jpg" alt="profile" style="width: 120px; height: 130px; border-radius: 10px; margin-bottom: 20px;">
+            <h3>Chaitanya Patil</h3>
+            <p>Blockchain and Web3 Expert</p>
+        </div>
+        <div class="member right">
+            <img src="kunal.png.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
+            <h3>Kunal Pawar</h3>
+            <p>Web Developer</p>
+        </div>
+        <div class="member left">
+            <img src="rajat.jpg" alt="profile" style="width: 110px; height: 120px; border-radius: 10px;">
+            <h3>Rajat Chaudhari</h3>
+            <p>AI & ML Specialist</p>
+        </div>
     </div>
-  </div>
-
+</div>
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -475,16 +685,29 @@
   </footer>
 
   <audio id="tikSound">
-    <source src="tik-sound.mp3" type="audio/mpeg">
+    <source src="buttonsound.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
   <script>
-    
-// Function to play the "tik" sound
-function playSound() {
+    // Function to play the "tik" sound
+    function playSound() {
       const audio = document.getElementById('tikSound');
       audio.play();
     }
+
+    // Function to stop the sound
+    function stopSound() {
+      const audio = document.getElementById('tikSound');
+      audio.pause();
+      audio.currentTime = 0; // Reset the audio to the beginning
+    }
+
+    // Add hover event listeners to all buttons
+    const buttons = document.querySelectorAll('.box button');
+    buttons.forEach(button => {
+      button.addEventListener('mouseenter', playSound);
+      button.addEventListener('mouseleave', stopSound);
+    });
 
     // Image Slider Functionality
     const images = document.querySelectorAll('.image-slider img');
@@ -503,4 +726,29 @@ function playSound() {
       images[currentImage].classList.add('active');
       textOverlays[currentImage].classList.add('active');
     }, 3000);
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const members = document.querySelectorAll(".member");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("animate");
+                    }, index * 500); // Delay each member's animation
+                }
+            });
+        },
+        {
+            threshold: 0.5, // Trigger when 50% of the element is visible
+        }
+    );
+
+    members.forEach((member) => {
+        observer.observe(member);
+    });
+});
   </script>
+</body>
+</html>
